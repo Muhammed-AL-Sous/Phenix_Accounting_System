@@ -902,10 +902,35 @@ section .money-increase {
 }
 
 .footer-call span a {
-  display: block;
   color: #b11016;
   font-size: 15px;
   font-weight: 600;
+  transition: var(--main-transition);
+}
+
+.footer-call span a:hover {
+  color: var(--main-color);
+  font-weight: bold;
+}
+/* إخفاء الرابط المخصص للأجهزة المحمولة على الشاشات الكبيرة */
+.mobile-link {
+  display: none;
+}
+
+/* إخفاء الرابط المخصص للأجهزة المكتبية على الشاشات الصغيرة */
+.desktop-link {
+  display: block;
+}
+
+/* إظهار الرابط المخصص للأجهزة المحمولة على الشاشات الصغيرة */
+@media (max-width: 768px) {
+  .desktop-link {
+    display: none;
+  }
+
+  .mobile-link {
+    display: block;
+  }
 }
 
 .footer-call i {
