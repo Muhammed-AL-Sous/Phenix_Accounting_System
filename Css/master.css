@@ -912,17 +912,15 @@ section .money-increase {
   color: var(--main-color);
   font-weight: bold;
 }
-/* إخفاء الرابط المخصص للأجهزة المحمولة على الشاشات الكبيرة */
+
 .mobile-link {
   display: none;
 }
 
-/* إخفاء الرابط المخصص للأجهزة المكتبية على الشاشات الصغيرة */
 .desktop-link {
   display: block;
 }
 
-/* إظهار الرابط المخصص للأجهزة المحمولة على الشاشات الصغيرة */
 @media (max-width: 768px) {
   .desktop-link {
     display: none;
