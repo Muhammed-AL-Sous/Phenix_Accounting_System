@@ -16,6 +16,23 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+  transition: var(--main-transition);
+  background-color: #b11016;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #ed1c24;
+}
+
 ul {
   list-style: none;
 }
@@ -275,7 +292,7 @@ header .navbar .hamburger .bar {
   header .navbar .nav-menu {
     position: absolute;
     left: -100%;
-    top: 70px;
+    top: 89px;
     gap: 0;
     flex-direction: column;
     background-color: var(--secondary-color);
@@ -738,7 +755,7 @@ section .money-increase {
   padding: 20px;
   border-radius: 10px;
   background-color: #f8f8f8;
-  min-height: 400px;
+  min-height: 430px;
   position: relative;
   transition: 0.5s;
   box-shadow: 0 2px 15px rgb(0 0 0 / 20%);
@@ -771,17 +788,17 @@ section .money-increase {
   line-height: 1.8;
   color: #444;
   font-weight: 400;
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .row3 .container .box .content a {
   display: block;
   position: absolute;
-  bottom: 30px;
-  left: 30px;
-  border-top: 2px solid #ddd;
+  bottom: 15px;
+  left: 15px;
   padding: 10px;
   color: #777;
+  border-top: 2px solid #ddd;
   transition: var(--main-transition);
   font-weight: 500;
 }
@@ -1369,11 +1386,10 @@ h2.header:before {
   content: "";
   position: absolute;
   transform: translate(-50%, -50%) skewX(20deg);
-  margin-left: -81px;
   margin-top: -24px;
-  width: 115%;
+  width: 160%;
   height: 110%;
-  left: 100%;
+  left: 0;
   top: 100%;
   z-index: -1;
   background-color: #383838;
@@ -1384,13 +1400,13 @@ h2.header:before {
 
 @keyframes shadow-up {
   0% {
-    left: -30px;
-    bottom: -30px;
+    left: -100%;
+    bottom: -100%;
     background-color: var(--main-color);
   }
 
   100% {
-    left: 110%;
+    left: 75%;
     bottom: 100%;
     background-color: var(--main-color);
   }
@@ -1601,6 +1617,15 @@ h2.header:before {
   max-height: 400px;
 }
 
+@media (max-width: 991px) {
+  .inventory .app-inventory {
+    flex-direction: column;
+    max-height: 100%;
+    padding-top: 50px;
+    padding-bottom: 0;
+  }
+}
+
 .inventory .app-inventory::before {
   content: "";
   position: absolute;
@@ -1631,6 +1656,12 @@ h2.header:before {
   margin-left: auto;
 }
 
+@media (max-width: 991px) {
+  .inventory .app-inventory .image {
+    margin: auto;
+  }
+}
+
 .inventory .app-inventory .image img {
   position: relative;
   width: 400px;
@@ -1655,6 +1686,13 @@ h2.header:before {
   font-family: Livvic, sans-serif;
 }
 
+@media (max-width: 991px) {
+  .inventory .app-inventory .text {
+    margin: auto;
+    order: -1;
+  }
+}
+
 .inventory .app-inventory .text h4 {
   text-align: center;
   color: white;
@@ -1669,6 +1707,12 @@ h2.header:before {
   font-weight: 400;
   line-height: 1.8;
   margin-bottom: 15px;
+}
+
+@media (max-width: 991px) {
+  .inventory .app-inventory .text p {
+    text-align: center;
+  }
 }
 
 .inventory .app-inventory .text a {
@@ -1706,5 +1750,100 @@ h2.header:before {
 }
 
 /* End Inventory */
+
+/* Start manufacturing */
+.manufacturing .container {
+  font-family: Livvic, sans-serif;
+  margin-bottom: 50px;
+}
+
+.manufacturing .container .head {
+  max-width: 600px;
+}
+
+.manufacturing .container .head span {
+  font-weight: 600;
+  font-size: 15px;
+  color: #ed1c24;
+  font-style: italic;
+}
+
+.manufacturing .container .head h2 {
+  margin: 10px auto;
+  color: var(--main-color);
+}
+
+.manufacturing .container .head p {
+  color: #777;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.manufacturing .container .content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+@media (max-width: 991px) {
+  .manufacturing .container .content {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
+.manufacturing .container .content .body {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  width: 60%;
+  margin-top: 20px;
+  text-align: center;
+}
+
+@media (max-width: 991px) {
+  .manufacturing .container .content .body {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 10px;
+    width: 100%;
+  }
+}
+
+.manufacturing .container .content .body .box {
+  padding: 20px;
+  box-shadow: 0 2px 15px rgb(0 0 0 / 30%);
+  border-radius: 6px;
+  position: relative;
+  transition: var(--main-transition);
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.manufacturing .container .content .body .box img {
+  width: 60px;
+}
+
+.manufacturing .container .content .body .box h3 {
+  color: rgb(177, 16, 22);
+  margin: 10px auto;
+}
+
+.manufacturing .container .content .body .box p {
+  color: #444;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-bottom: 10px;
+}
+
+.manufacturing .container .content .image img {
+  max-width: 100%;
+  width: 400px;
+  border-radius: 6px;
+}
+
+/* End manufacturing */
 
 /* End Information Index */
